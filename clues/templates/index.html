@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<style>
+  body {background-color: #17202A;}
+h1   {color: white;}
+h1.sansserif {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:8vw;
+}
+p    {color: #d7e466;}
+p.sansserif {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:5vw;
+}
+img {
+  width: 60%;
+  height: auto;
+}
+
+input[type=text], select {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  text-align: center;
+  font-size: 3vw;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  margin: 15px;
+  padding: 10px;
+  text-align: center;
+  font-size: 4vw;
+  display: block;
+  background-color: black;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 6px;
+ }
+</style>
+</head>
+<body>
+
+<center>
+<!--<h1 class="sansserif">Paradox2 was here.</h1>
+<p class="sansserif">Decipher the clue using Augmented Reality. Then enter the code.</p>
+<a href="https://github.com/samhorne/paradox2/blob/master/paradox2.usdz?raw=true" rel="ar">
+<img src="https://developer.apple.com/design/human-interface-guidelines/ios/images/ARKit_Glyph_Button.svg" alt="Tap Here">
+</a>
+-->
+<p></p>
+<p></p>
+
+<form action="." method="post">
+  {% csrf_token %}
+  {{ form }}
+  <input type="submit" value="Submit">
+</form>
+
+<p class="sansserif"></p>
+</center>
+</body>
+</html>
