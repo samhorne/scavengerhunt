@@ -7,7 +7,7 @@ def index(request):
     if request.method == 'POST':
         form = CodeForm(request.POST)
         if form.is_valid():
-            code = form.cleaned_data['code']
+            code = form.cleaned_data['code'].lower()
             if cModels.Clue.objects.filter(codeword_1=code).exists():
                 print('Code {} found.'.format(code))
                 c = cModels.Clue.objects.get(codeword_1=code)
@@ -15,11 +15,11 @@ def index(request):
                 c.viewed_1 = True
                 c.save()
                 return HttpResponseRedirect('/clues/{}'.format(redirect))
-            elif cModels.Clue.objects.filter(codeword_1=code).exists():
+            elif cModels.Clue.objects.filter(codeword_2=code).exists():
                 print('Code {} found.'.format(code))
-                c = cModels.Clue.objects.get(codeword_1=code)
-                redirect = c.view_1
-                c.viewed_1 = True
+                c = cModels.Clue.objects.get(codeword_2=code)
+                redirect = c.view_2
+                c.viewed_2 = True
                 c.save()
                 return HttpResponseRedirect('/clues/{}'.format(redirect))
             else:

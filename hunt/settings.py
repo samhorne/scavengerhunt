@@ -29,6 +29,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['13.92.185.23', 'localhost']
 
+#MEDIA_URL = '/home/azureuser/hunt/static/clues/'
+MEDIA_ROOT=os.path.join(BASE_DIR,"media")
+MEDIA_URL='/media/'
 
 # Application definition
 
@@ -65,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
